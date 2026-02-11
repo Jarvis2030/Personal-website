@@ -13,31 +13,37 @@ export const Projects = () =>{
             title: "FDA clearance",
             desciption:"Medical Ideation and Development",
             imgUrl: projImg1,
+            slug:'fda-clearance'
         },
         {
             title: "FDA clearance",
             desciption:"Medical Ideation and Development",
             imgUrl: projImg2,
+            slug:'fda-clearance'
         },
         {
             title: "FDA clearance",
             desciption:"Medical Ideation and Development",
             imgUrl: projImg3,
+            slug:'fda-clearance'
         },
         {
             title: "FDA clearance",
             desciption:"Medical Ideation and Development",
             imgUrl: projImg4,
+            slug:'fda-clearance'
         },
         {
             title: "FDA clearance",
             desciption:"Medical Ideation and Development",
             imgUrl: projImg5,
+            slug:'fda-clearance'
         },
         {
             title: "FDA clearance",
             desciption:"Medical Ideation and Development",
             imgUrl: projImg5,
+            slug:'fda-clearance'
         }
     ]
  
