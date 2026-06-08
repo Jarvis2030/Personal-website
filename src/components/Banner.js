@@ -1,13 +1,13 @@
 import { Col, Container, Row } from "react-bootstrap"
 import {BsArrowRightCircle} from 'react-icons/bs';
-import headerImg from "../assets/img/banner.jpg";
+import headerImg from "../assets/img/logo.png";
 import { useEffect, useState } from "react";
 export const Banner = ()=> {
 
     const [text, setText] = useState(""); // main variable to be update dynamically
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["Nerual Engineer","Data Analyst", "Crossfiter"];
+    const toRotate = ["AI/ML Developer","Brain-Machine Interface Research Student", "Crossfiter"];
     const [Delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 2000;
 
@@ -45,12 +45,25 @@ export const Banner = ()=> {
                 <Row className="align-items-center">
                     <Col xs={12} md={6}xl={7}>
                         <span className="tagline"> Welcome to MY world! </span>
-                        <h1>{'Hi this is June'}</h1><span className="wrap">{text}</span>
-                        <p>Testing paragraph</p>
-                        <button onClick={()=> console.log('connect')}>Let's connect! <BsArrowRightCircle size={25}/></button>
+                        <h1>{'Hello! This is June.'}</h1><span className="wrap">{text}</span>
+                        <p>I’m a hands-on builder who enjoys getting my hands dirty across the entire product 
+                            lifecycle—from early “pre-totypes” and system architecture, to control design, 
+                            implementation, and data processing and analysis.</p>
+
+                        <p>I might not be the best expert in a single niche, but I understand what everyone is trying to achive. </p>
+                        <div className="banner-connections">
+                        <button onClick={() => window.location.href = "mailto:June9181628@gmail.com?subject=Portfolio%20Inquiry"}>
+                                Shall we talk? <BsArrowRightCircle size={25}/>
+                                </button>
+                             <a href="/cv.pdf" className="cv-link" target="_blank" rel="noreferrer">
+                                 grab my CV here <BsArrowRightCircle size={20}/></a>
+                        </div>
+                       
                     </Col>
-                    <Col xs={12} md={6}xl={5}>
-                        <img src={headerImg} alt="Header Img"/>
+                    <Col xs={12} md={6} xl={5}>
+                        <div className="banner-image-wrap">
+                        <img src={headerImg} alt="June portrait or hero visual" />
+                        </div>
                     </Col> 
                 </Row>
 

@@ -9,8 +9,9 @@ import './css/Banner.css';
 import './css/Navbar.css';
 import './css/App.css';
 import './css/Skills.css'
-import './css/Project.css'
+import './css/projectNew.css'
 import './css/Footer.css'
+import "./css/ProjectDetail.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Footer } from './components/Footer';
 

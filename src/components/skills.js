@@ -1,70 +1,138 @@
-import { Col, Row } from "react-bootstrap";
-import Carousel from "react-multi-carousel";
-import skillIcon1 from "../assets/img/skill-1.png";
-import skillIcon2 from "../assets/img/skill-2.png";
-import skillIcon3 from "../assets/img/skill-3.png";
-import skillIcon4 from "../assets/img/skill-4.png";
-import skillIcon5 from "../assets/img/skill-5.png";
-import colorSharp from "../assets/img/color-sharp.png"
-
-import "react-multi-carousel/lib/styles.css";
+import { useEffect, useRef, useState } from "react";
+import { Col, Container, Row, Tab } from "react-bootstrap";
+import Nav from "react-bootstrap/Nav";
 
 export const Skills = () => {
-    const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 5
-        },
-        desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 3
-        },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 2
-        },
-        mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1
+  const [animated, setAnimated] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const currentRef = sectionRef.current;
+    if (!currentRef) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimated(true);
         }
-      };
-    
-    return(
-        <section className="skill" id='skills'>
-            <container>
-                <Row>
-                    <Col>
-                    <div className="skill-box">
-                        <h2>Skills</h2>
-                        <p>sijfdwpi efjgpwrif wrkfopwrkfo wrfhorwjfgjrog ewr</p>
-                        <Carousel responsive={responsive} infinite={true} className="skill-slider">
-                        <div className="item">
-                                <img src={skillIcon1}/>
-                                <h5>Skill 1</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skillIcon2}/>
-                                <h5>Skill 2</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skillIcon3}/>
-                                <h5>Skill 3</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skillIcon4}/>
-                                <h5>Skill 4</h5>
-                            </div>
-                            <div className="item">
-                                <img src={skillIcon5}/>
-                                <h5>Skill 5</h5>
-                            </div>
-                        </Carousel>
-                    </div>
-                    </Col>
-                </Row>
-                
-            </container>
-        </section>
+      },
+      {
+        threshold: 0.3,
+      }
     );
-}
+
+    observer.observe(currentRef);
+
+    return () => {
+      observer.unobserve(currentRef);
+    };
+  }, []);
+  
+  const levelMap = {
+    1: "Beginner",
+    2: "Intermediate",
+    3: "Proficient",
+    4: "Advanced",
+  };
+
+  const technicalSkills = [
+    { name: "Python", level: 4 },
+    { name: "MATLAB", level: 4 },
+    { name: "C / C++", level: 3 },
+    { name: "React", level: 2 },
+    { name: "CSS", level: 1 },
+    { name: "Machine Learning", level: 4 },
+    { name: "Signal Processing", level: 4 },
+    { name: "Embedded Systems", level: 2 },
+  ];
+  
+  const languageSkills = [
+    { name: "English", level: 4 },
+    { name: "Mandarin", level: 4 },
+    { name: "Cantonese", level: 2 },
+    { name: "Korean", level: 1 },
+    { name: "Scientific Writing", level: 2 },
+  ];
+  
+  const toolSkills = [
+    { name: "PyTorch", level: 3 },
+    { name: "TensorFlow", level: 3 },
+    { name: "Git / GitHub", level: 3 },
+    { name: "SolidWorks", level: 1 },
+    { name: "Arduino", level: 3 },
+    { name: "CubIDE", level: 2 },
+  ];
+
+  const SkillBarList = ({ skills }) => (
+    <div className="skills-panel">
+      {skills.map((skill) => (
+        <div className="skill-row" key={skill.name}>
+          <div className="skill-row-top">
+            <h4>{skill.name}</h4>
+            <span>{levelMap[skill.level]}</span>
+          </div>
+
+          <div className="skill-level-grid">
+            {[1, 2, 3, 4].map((lvl) => (
+                <div
+                key={lvl}
+                className={`skill-level-box ${
+                    animated && lvl <= skill.level ? `filled level-${lvl}` : ""
+                }`}
+                />
+            ))}
+            </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <section className="skills-section" id="skills" ref={sectionRef}>
+      <Container>
+        <Row className="justify-content-center">
+          <Col lg={10}>
+            <div className="skills-head">
+              <h2>Skills</h2>
+              <p>
+                A cross-disciplinary toolkit spanning technical development,
+                languages, and research-oriented tools.
+              </p>
+            </div>
+
+            <Tab.Container id="skills-tabs" defaultActiveKey="technical">
+              <Nav
+                variant="pills"
+                className="skills-tabs justify-content-center"
+              >
+                <Nav.Item>
+                  <Nav.Link eventKey="technical">Technical</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="languages">Languages</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="tools">Tools</Nav.Link>
+                </Nav.Item>
+              </Nav>
+
+              <Tab.Content className="skills-tab-content">
+                <Tab.Pane eventKey="technical">
+                  <SkillBarList skills={technicalSkills} />
+                </Tab.Pane>
+
+                <Tab.Pane eventKey="languages">
+                  <SkillBarList skills={languageSkills} />
+                </Tab.Pane>
+
+                <Tab.Pane eventKey="tools">
+                  <SkillBarList skills={toolSkills} />
+                </Tab.Pane>
+              </Tab.Content>
+            </Tab.Container>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
+};
