@@ -70,7 +70,7 @@ export const NavBar = () => {
             <Nav.Link
               as={HashLink}
               smooth
-              to="/#home"
+              to="#home"
               className={activeLink === "home" ? "active navbar-link" : "navbar-link"}
               onClick={() => onUpdateActiveLink("home")}
             >
@@ -80,7 +80,7 @@ export const NavBar = () => {
             <Nav.Link
               as={HashLink}
               smooth
-              to="/#projects"
+              to="#projects"
               className={activeLink === "projects" ? "active navbar-link" : "navbar-link"}
               onClick={() => onUpdateActiveLink("projects")}
             >
@@ -90,7 +90,7 @@ export const NavBar = () => {
             <Nav.Link
               as={HashLink}
               smooth
-              to="/#skills"
+              to="#skills"
               className={activeLink === "skills" ? "active navbar-link" : "navbar-link"}
               onClick={() => onUpdateActiveLink("skills")}
             >

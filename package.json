@@ -19,7 +19,7 @@
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://jarvis2030.github.io/Personal-website",
+  "homepage": "https://jarvis2030.github.io",
   "scripts": {
       "start": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js start",
       "build": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js build",
