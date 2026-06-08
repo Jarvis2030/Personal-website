@@ -4,7 +4,8 @@ import {Banner} from './components/Banner';
 import { Skills } from './components/skills';
 import { Projects } from './components/projects';
 import { ProjectDetail } from './components/projectDetail'; 
-import { Routes,Route,BrowserRouter } from 'react-router-dom';
+import { Routes,Route } from 'react-router-dom';
+import { HashRouter } from "react-router-dom";
 import './css/Banner.css';
 import './css/Navbar.css';
 import './css/App.css';
@@ -27,7 +28,7 @@ function Home(){
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <div className="App">
     <NavBar />
 
@@ -41,7 +42,7 @@ function App() {
 
       <Footer />
     </div>
-  </BrowserRouter>
+  </HashRouter>
   );
 }
 
