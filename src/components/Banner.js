@@ -7,7 +7,7 @@ export const Banner = ()=> {
     const [text, setText] = useState(""); // main variable to be update dynamically
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["AI/ML Developer","Brain-Machine Interface Research Student", "Crossfiter"];
+    const toRotate = ["AI/ML Developer","Brain-Machine Interface Research Student", "Crossfitter","Explorer"];
     const [Delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 2000;
 
@@ -50,7 +50,7 @@ export const Banner = ()=> {
                             lifecycle—from early “pre-totypes” and system architecture, to control design, 
                             implementation, and data processing and analysis.</p>
 
-                        <p>I might not be the best expert in a single niche, but I understand what everyone is trying to achive. </p>
+                        <p>I might not be the best expert in a single niche, but I listen and understand what team is trying to achive. </p>
                         <div className="banner-connections">
                         <button onClick={() => window.location.href = "mailto:June9181628@gmail.com?subject=Portfolio%20Inquiry"}>
                                 Shall we talk? <BsArrowRightCircle size={25}/>

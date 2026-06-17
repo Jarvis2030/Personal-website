@@ -60,7 +60,8 @@ export const Skills = () => {
     { name: "Git / GitHub", level: 3 },
     { name: "SolidWorks", level: 1 },
     { name: "Arduino", level: 3 },
-    { name: "CubIDE", level: 2 },
+    { name: "CubeIDE", level: 2 },
+    { name: "EEGLAB", level: 2 },
   ];
 
   const SkillBarList = ({ skills }) => (

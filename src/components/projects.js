@@ -6,7 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 import { ProjectCard } from "./projectCard";
 import pivot from "../assets/img/project_img/cover/pivot.png";
 import help from "../assets/img/project_img/cover/help.png";
-import projImg3 from "../assets/img/project_img/cover/help.png";
+import consturction from "../assets/img/project_img/cover/consturction.png";
 import semonet from "../assets/img/project_img/cover/S_emonet.png";
 import bikegrid from "../assets/img/project_img/cover/bikegrid.png";
 import paws from "../assets/img/project_img/cover/paws.png";
@@ -25,6 +25,7 @@ export const Projects = () => {
       imgUrl: paws,
       slug: "paws",
       date: "2023 Jun",
+      tags: ["Embedded System", "C/C++", "HW/SW Integration"]
     },
     {
       title: "BikeGrid: Recurrent Ensemble Framework for Predictive Multi-Day Bike Usage Forecasting",
@@ -33,14 +34,16 @@ export const Projects = () => {
       imgUrl: bikegrid,
       slug: "bikegrid",
       date: "2023 Dec",
+      tags: ["postgreSQL", "Python", "Ensemble Learning"]
     },
     {
-      title: "HELP: Heteromodal Epidermal Liquid-metal Patch",
+      title: "CARA: Cardiorespiratory Monitoring with Analog Constriction Gate",
       description:
         "Flexible Patch with Analog Constriction Gates for Cardiorespiratory Monitoring. The associated software can successfully classified 78.9% of sleeping stage and diagnosed apnea in testing subject data.",
       imgUrl: help,
       slug: "help-patch",
       date: "2024 Sep",
+      tags: ["Python & Matlab", "Multimodel biosensor", "Signal processing pipeline"]
     },
     {
       title: "PIVOT: Advanced Neuromodulation System for Phantom Limb Pain",
@@ -49,6 +52,7 @@ export const Projects = () => {
       imgUrl: pivot,
       slug: "pivot-phantom-limb-pain",
       date: "2025 Sep",
+      tags: ["Med device development", "Innovation", "FDA docs"]
     },
     {
       title: "S-EmoNet: Efficient Model for Real-time EEG Emotion Recognition",
@@ -57,14 +61,17 @@ export const Projects = () => {
       imgUrl: semonet,
       slug: "s-emonet",
       date: "2026 Jan",
+      tags: ["Spiking Neural Network (SNN)", "Raw wearable EEG data", "Edge AI"]
+
     },
     {
       title: "Bio-Inspired Neural Architecture for EEG-Based Affective Computing",
       description:
         "Implementation and construction of an advanced affective computing framework using a Kalman filter backbone and spiking neural network models.",
-      imgUrl: projImg3,
+      imgUrl: consturction,
       slug: "bio-inspired-eeg-emotion",
       date: "2026 Jun",
+      tags: ["Spiking Neural Network (SNN)", "Raw wearable EEG data", "Real-time Processing"]
     },
   
   ];
@@ -131,7 +138,8 @@ export const Projects = () => {
           <Col>
             <div className="project-head-box">
               <h2>Projects</h2>
-              <p>Selected research, biomedical engineering, and applied AI projects.</p>
+              <p>Here are some projects I’ve built in the past that I feel represent different sides of me</p> 
+              <p> (The cover page is still being designed—sorry it’s AI-generated for now)</p>
 
               <div className="active-project-info">
                 <h3>{activeProject?.title}</h3>

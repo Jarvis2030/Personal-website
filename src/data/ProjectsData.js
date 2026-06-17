@@ -263,8 +263,7 @@ export const projectsData = [
         heading: "End Credits",
         paragraphs: [
           "📄 Research Paper : Li, Y., Lin, Y., He, A., Wang, X., Wang, X., Nyein, H., & Cui, J. (2026). Intermetallic-anchored epidermal EGaIn patch with analog constriction gates for cardiorespiratory monitoring. Science Advances. (Under Review)",
-          "Appreciate my PI, Professor Hnin Yin Yin, Nyein and my mentor Yui & Asmita. Also thanks all the member in Nyein's lab for tutoring, guiding and assisting throughout during our project"
-        ]
+          ,"Many thanks to my PI, Professor Hnin Yin Yin Nyein, my mentors Yui and Asmita, and all the members of Nyein’s lab for their tutoring, guidance, and support throughout this project."        ]
       },
   
     ],
@@ -413,10 +412,9 @@ export const projectsData = [
       {
         type: "section",
         heading: "End Credits",
-        bullets: [
-          "🌐 Live Demo: [Link to video or interactive demo]",
-          "💻 Source Code: [GitHub Repository Link]",
-          "📄 Final Report / Documentation: [Link to PDF or project write-up]"
+        paragraphs: [
+          "💻 Source Code: https://github.com/Jarvis2030/EmotionNET",
+          "📄 Final Report: ./SEmotionNET_report.pdf "
         ]
       }
     ]
@@ -547,7 +545,7 @@ export const projectsData = [
         type: "section",
         heading: "End Credits",
         paragraphs: [
-          "💻 Source Code: [GitHub Repository Link]",
+          "💻 Source Code: https://github.com/Jarvis2030/Auto-Pet-Feeder",
           "Special thanks to my group partner, Yu-Hsi Li, who took the lead on system assembly, integration and documentation."
         ]
       }
